@@ -1,0 +1,5 @@
+RewriteBase /
+RewriteEngine On
+RewriteRule ^posts$ index.php
+RewriteRule ^post/(.*)$ index.php?slug=$1
+RewriteRule ^composer$ index.php
