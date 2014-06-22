@@ -59,6 +59,8 @@ function mya_connection_save_new_post ($title, $text, $image_file)
 {
 	$db_link = mya_connection_db_open ();
 
+	$title = mysqli_real_escape_string ($db_link, $title);
+	$text = mysqli_real_escape_string ($db_link, $text);
 	$slug = get_slug_from_title ($title);
 	$date = time();
 
