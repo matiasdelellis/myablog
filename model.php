@@ -12,7 +12,6 @@ function mya_connection_db_open ()
 	$dbase = $config->get("SQL", "database");
 
 	$link = mysqli_connect ($host, $user, $pass, $dbase);
-	//$link = mysqli_connect ('localhost', 'root', 'sarandi', "bd_blog");
 
 	if (mysqli_connect_errno())
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();

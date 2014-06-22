@@ -3,3 +3,10 @@ myablog: MY Yet Another Blog.
 Please ignore this, it's not a serious product.
 
 Now I'm learning PHP and MySQL, and this is my first experiment. Maybe turn out to be my personal blog, or Pragha Website, but neither is the idea, just trying to learn!.
+
+How to test (A rude explanation):
+	0. Configure Apache, MySQL and PHP. Download this, and set the virtual host.
+	1. First of all, create the database that will be used in MySQL.
+	2. Edit the includes/config.ini.php adding the MySQL connection details.
+	3. In your web browser, go to virtual.host/install.php
+	4. Remove this file... and play!.
