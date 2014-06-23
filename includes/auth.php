@@ -1,19 +1,23 @@
 <?php
 session_start();
 class mya_auth {
-	private function __construct () {
+	private function __construct ()
+	{
 		$this->settings = parse_ini_string ($contents, TRUE);
 	}
 
-	public function is_logged () {
+	public function is_logged ()
+	{
 		return isset($_SESSION['username']);
 	}
 
-	public function logout () {
+	public function logout ()
+	{
 		unset($_SESSION['username']);
 	}
 
-	public function button () {
+	public function button ()
+	{
 		$button  = "<a href='";
 		$button .= isset($_SESSION['username']) ? "/logout'>" : "/login'>";
 		$button .= "<button type='button' class='btn btn-default navbar-btn'>";
@@ -23,8 +27,10 @@ class mya_auth {
 		return $button;
 	}
 
-	public static function & instance () {
+	public static function & instance ()
+	{
 		static $_instance = null;
+
 		return $_instance = (empty($_instance)) ? new self() : $_instance;
 	}
 }
