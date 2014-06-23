@@ -37,8 +37,18 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="/posts">Home</a></li>
-							<li><a href="/composer">Upload</a></li>
+							<li class="active">
+								<a href="/posts">Home</a>
+							</li>
+							<?php
+								if (mya_auth::instance()->is_logged())
+									echo "<li><a href='/composer'>Upload</a></li>";
+							?>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							</li>
+								<?php echo mya_auth::instance()->button() ?>
+							</li>
 						</ul>
 					</div>
 				</div>

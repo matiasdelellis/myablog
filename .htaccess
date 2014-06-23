@@ -3,3 +3,5 @@ RewriteEngine On
 RewriteRule ^posts$ index.php
 RewriteRule ^post/(.*)$ index.php?slug=$1
 RewriteRule ^composer$ index.php
+RewriteRule ^login$ index.php
+RewriteRule ^logout$ index.php

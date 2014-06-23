@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/auth.php';
 require_once 'model.php';
 require_once 'controller.php';
 
@@ -20,6 +21,14 @@ if ($request) {
 		case "composer":
 			$controller = new MyaController;
 			$controller->compose_new_post ();
+			break;
+		case "login":
+			$controller = new MyaController;
+			$controller->login ();
+			break;
+		case "logout":
+			$controller = new MyaController;
+			$controller->logout ();
 			break;
 		default:
 			//header('Status: 404 Not Found');

@@ -12,6 +12,25 @@ class MyaController {
 	}
 	function compose_new_post ()
 	{
-		require 'templates/composerView.php';
+		if (mya_auth::instance()->is_logged())
+			require 'templates/composerView.php';
+	}
+	function login ()
+	{
+		if (!mya_auth::instance()->is_logged())
+			require 'templates/loginView.php';
+		else {
+			$posts = mya_connection_get_posts ();
+			require 'templates/postsView.php';
+		}
+	}
+
+	function logout ()
+	{
+		if (mya_auth::instance()->is_logged())
+			mya_auth::instance()->logout ();
+
+		$posts = mya_connection_get_posts ();
+		require 'templates/postsView.php';
 	}
 }
