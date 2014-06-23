@@ -1,8 +1,9 @@
 <?php $title = 'Login' ?>
+<?php $script = '/js/validateLogin.js' ?>
 <?php ob_start() ?>
 <div class="row featurette">
 	<h2 class="featurette-heading">Login</h2>
-	<form class="form-horizontal" role="form" action="/includes/login.php" method="post" enctype="multipart/form-data">
+	<form class="form-horizontal" role="form" name="loginForm" action="/includes/login.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="inputTitle" class="col-sm-2 control-label">Username</label>
 			<div class="col-sm-10">
@@ -17,7 +18,7 @@
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Login</button>
+				<button type='button' class="btn btn-default" name="buttonLogin">Login</button>
 			</div>
 		</div>
 	</form>

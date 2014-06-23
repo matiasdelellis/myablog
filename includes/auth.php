@@ -21,7 +21,7 @@ class mya_auth {
 		$button  = "<a href='";
 		$button .= isset($_SESSION['username']) ? "/logout'>" : "/login'>";
 		$button .= "<button type='button' class='btn btn-default navbar-btn'>";
-		$button .= isset($_SESSION['username']) ? "Logout" : "Login";
+		$button .= isset($_SESSION['username']) ? $_SESSION['username'].": Logout" : "Login";
 		$button .= "</button></a>";
 
 		return $button;
