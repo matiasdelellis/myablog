@@ -41,8 +41,10 @@
 								<a href="/posts">Home</a>
 							</li>
 							<?php
-								if (mya_auth::instance()->is_logged())
+								if (mya_auth::instance()->is_logged()) {
 									echo "<li><a href='/composer'>Upload</a></li>";
+									echo "<li><a href='/admin'>Admin</a></li>";
+								}
 							?>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

@@ -38,4 +38,16 @@ class MyaController {
 		$posts = mya_connection_get_posts ();
 		require 'templates/postsView.php';
 	}
+
+	function show_admin_page ()
+	{
+		if (mya_auth::instance()->is_logged()) {
+			$users = mya_connection_get_users ();
+			require 'templates/adminView.php';
+		}
+		else {
+			$posts = mya_connection_get_posts ();
+			require 'templates/postsView.php';
+		}
+	}
 }

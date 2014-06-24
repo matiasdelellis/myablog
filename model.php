@@ -55,6 +55,23 @@ function mya_connection_get_post_by_slug ($slug)
 	return $row_result;
 }
 
+function mya_connection_get_users ()
+{
+	$db_link = mya_connection_db_open ();
+
+	$query = "SELECT * FROM users";
+	$result = mysqli_query ($db_link, $query);
+
+	$users = array ();
+	while ($row_result = mysqli_fetch_assoc ($result))
+	{
+		$users[] = $row_result;
+	}
+	mya_connection_db_close ($db_link);
+
+	return $users;
+}
+
 function mya_connection_save_new_post ($title, $text, $image_file)
 {
 	$db_link = mya_connection_db_open ();

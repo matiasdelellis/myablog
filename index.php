@@ -30,6 +30,10 @@ if ($request) {
 			$controller = new MyaController;
 			$controller->logout ();
 			break;
+		case "admin":
+			$controller = new MyaController;
+			$controller->show_admin_page ();
+			break;
 		default:
 			//header('Status: 404 Not Found');
 			//echo '<html><body><h1>Page Not Found</h1></body></html>';
