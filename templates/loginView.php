@@ -2,7 +2,7 @@
 <?php $script = '/js/validateLogin.js' ?>
 <?php ob_start() ?>
 <div class="row featurette">
-	<h2 class="featurette-heading">Login</h2>
+	<h1 class="featurette-heading">Login</h1>
 	<form class="form-horizontal" role="form" name="loginForm" action="/includes/login.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="inputUsername" class="col-sm-2 control-label">Username</label>

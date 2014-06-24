@@ -9,10 +9,10 @@
 			</div>
 			<div class="col-md-8">
 				<a href='/post/<?php echo $post['slug']?>' style="text-decoration:none">
-					<h2 class="featurette-heading">
+					<h1 class="featurette-heading">
 						<?php echo $post['title'] ?>
 						<!--<span class="text-muted"> <?php echo date("d-m-Y", $post['date']); ?> </span>-->
-					</h2>
+					</h1>
 				</a>
 				<p class="lead">
 					<?php echo $post['text']?>

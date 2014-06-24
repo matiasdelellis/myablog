@@ -1,7 +1,7 @@
 <?php $title = 'Upload new post' ?>
 <?php ob_start() ?>
 <div class="row featurette">
-	<h2 class="featurette-heading">Upload a new post</h2>
+	<h1 class="featurette-heading">Upload a new post</h1>
 	<form class="form-horizontal" role="form" action="/includes/uploadPost.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="inputTitle" class="col-sm-2 control-label">Title</label>
