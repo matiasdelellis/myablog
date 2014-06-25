@@ -1,6 +1,6 @@
 <?php
-require_once 'includes/slug.php';
-require_once 'includes/config.php';
+require_once 'helpers/slug.php';
+require_once 'core/config.php';
 
 function mya_connection_db_open ()
 {

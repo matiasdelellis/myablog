@@ -24,6 +24,20 @@ function validate_login_form ()
 	}
 }
 
+function summit_login_form (event)
+{
+	if (event.charCode == 13)
+		validate_login_form ();
+}
+
 window.onload = function() {
 	document.loginForm.buttonLogin.onclick = validate_login_form;
+	//document.loginForm.inputPassword.onkeypress = summit_login_form(event);
 }
+
+	$("inputPassword").keypress(function (event) {
+		if(event.which == 13) {
+			validate_login_form ();
+			event.preventDefault();
+		}
+	});

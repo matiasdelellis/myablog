@@ -1,9 +1,9 @@
 <?php $title = 'Login' ?>
-<?php $script = '/js/validateLogin.js' ?>
+<?php $script = 'app/views/js/validateLogin.js' ?>
 <?php ob_start() ?>
 <div class="row featurette">
 	<h1 class="featurette-heading">Login</h1>
-	<form class="form-horizontal" role="form" name="loginForm" action="/includes/login.php" method="post" enctype="multipart/form-data">
+	<form class="form-horizontal" role="form" name="loginForm" action="app/helpers/login.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="inputUsername" class="col-sm-2 control-label">Username</label>
 			<div class="col-sm-10">
@@ -24,4 +24,4 @@
 	</form>
 </div>
 <?php $content = ob_get_clean() ?>
-<?php include 'myablogTemplate.php' ?>
+<?php include 'app/templates/default/myablogTemplate.php' ?>

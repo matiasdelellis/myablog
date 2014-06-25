@@ -27,4 +27,4 @@
 </div>
 <hr class="featurette-divider">
 <?php $content = ob_get_clean () ?>
-<?php include 'myablogTemplate.php' ?>
+<?php include 'app/templates/default/myablogTemplate.php' ?>

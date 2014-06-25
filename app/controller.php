@@ -3,29 +3,29 @@ class MyaController {
 	function show_posts ()
 	{
 		$posts = mya_connection_get_posts ();
-		require 'templates/postsView.php';
+		require 'app/views/postsView.php';
 	}
 
 	function show_post_by_slug ($slug)
 	{
 		$post = mya_connection_get_post_by_slug ($slug);
-		require 'templates/postView.php';
+		require 'app/views/postView.php';
 	}
 
 	function compose_new_post ()
 	{
 		if (mya_auth::instance()->is_logged())
-			require 'templates/composerView.php';
+			require 'app/views/composerView.php';
 	}
 
 	function login ()
 	{
 		if (!mya_auth::instance()->is_logged()) {
-			require 'templates/loginView.php';
+			require 'app/views/loginView.php';
 		}
 		else {
 			$posts = mya_connection_get_posts ();
-			require 'templates/postsView.php';
+			require 'app/views/postsView.php';
 		}
 	}
 
@@ -36,18 +36,18 @@ class MyaController {
 		}
 
 		$posts = mya_connection_get_posts ();
-		require 'templates/postsView.php';
+		require 'app/views/postsView.php';
 	}
 
 	function show_admin_page ()
 	{
 		if (mya_auth::instance()->is_logged()) {
 			$users = mya_connection_get_users ();
-			require 'templates/adminView.php';
+			require 'app/views/adminView.php';
 		}
 		else {
 			$posts = mya_connection_get_posts ();
-			require 'templates/postsView.php';
+			require 'app/views/postsView.php';
 		}
 	}
 }

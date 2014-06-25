@@ -4,7 +4,7 @@
 		<div class="row featurette">
 			<div class="col-md-4">
 				<a href='/post/<?php echo $post['slug']?>'>
-					<img class="featurette-image img-responsive" src="/<?php echo $post['image_file']?>">
+					<img class="featurette-image img-responsive" src="<?php echo $post['image_file']?>">
 				</a>
 			</div>
 			<div class="col-md-8">
@@ -22,4 +22,4 @@
 		<hr class="featurette-divider">
 	<?php endforeach; ?>
 <?php $content = ob_get_clean() ?>
-<?php include 'myablogTemplate.php' ?>
+<?php include 'app/templates/default/myablogTemplate.php' ?>

@@ -1,7 +1,7 @@
 <?php
-require_once 'includes/auth.php';
-require_once 'model.php';
-require_once 'controller.php';
+require_once 'app/core/auth.php';
+require_once 'app/model.php';
+require_once 'app/controller.php';
 
 $uri = $_SERVER['REQUEST_URI'];
 $req_array = explode ('/', $uri);

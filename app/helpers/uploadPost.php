@@ -1,4 +1,5 @@
 <?php
+echo "Index: ".dirname(__FILE__);
 require_once '../model.php';
 require_once 'fileUtils.php';
 
@@ -8,8 +9,8 @@ if ($_FILES["file"]["error"] > 0) {
 else {
 	$file_name = $_FILES["file"]["name"];
 	$temp_file = $_FILES["file"]["tmp_name"];
-	$dest_file = "../uploads/" . $file_name;
-	$link_file = "uploads/" . $file_name;
+	$dest_file = "../../uploads/" . $file_name;
+	$link_file = "/uploads/" . $file_name;
 
 	if (!is_uploaded_file ($temp_file)) {
 		header ("Status: 403");
