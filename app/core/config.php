@@ -4,7 +4,7 @@
  */
 if (!defined("INCLUDES_DIR")) define("INCLUDES_DIR", dirname(__FILE__));
 
-class mya_config {
+class Config {
 	private $settings = array();
 
 	private function __construct ()

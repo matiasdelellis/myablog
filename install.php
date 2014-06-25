@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config.php';
+require_once 'app/core/config.php';
 
 /*
  * Upload folder.
@@ -12,7 +12,7 @@ if (!file_exists("uploads")) {
 /*
  * Databse:
  */
-$config = mya_config::instance();
+$config = Config::instance();
 
 $host = $config->get("SQL", "host");
 $user = $config->get("SQL", "username");

@@ -32,7 +32,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="/posts">
-							<?php echo mya_config::instance()->get("BLOG", "name")?>
+							<?php echo Config::instance()->get("BLOG", "name")?>
 						</a>
 					</div>
 					<div class="navbar-collapse collapse">
@@ -41,7 +41,7 @@
 								<a href="/posts">Home</a>
 							</li>
 							<?php
-								if (mya_auth::instance()->is_logged()) {
+								if (Auth::instance()->is_logged()) {
 									echo "<li><a href='/composer'>Upload</a></li>";
 									echo "<li><a href='/admin'>Admin</a></li>";
 								}
@@ -49,7 +49,7 @@
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							</li>
-								<?php echo mya_auth::instance()->button() ?>
+								<?php echo Auth::instance()->button() ?>
 							</li>
 						</ul>
 					</div>

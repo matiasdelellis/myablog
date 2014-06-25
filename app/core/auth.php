@@ -1,6 +1,6 @@
 <?php
 session_start();
-class mya_auth {
+class Auth {
 	private function __construct ()
 	{
 		$this->settings = parse_ini_string ($contents, TRUE);

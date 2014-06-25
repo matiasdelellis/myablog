@@ -1,6 +1,6 @@
 <?php
-require_once 'includes/config.php';
-require_once 'includes/fileUtils.php';
+require_once 'app/core/config.php';
+require_once 'app/helpers/fileUtils.php';
 
 /*
  * Clean "uploads" folder.
@@ -11,7 +11,7 @@ if (!mya_rmdir("uploads"))
 /*
  * Databse:
  */
-$config = mya_config::instance();
+$config = Config::instance();
 
 $host = $config->get("SQL", "host");
 $user = $config->get("SQL", "username");

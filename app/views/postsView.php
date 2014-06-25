@@ -1,4 +1,4 @@
-<?php $title = mya_config::instance()->get("BLOG", "name")?>
+<?php $title = Config::instance()->get("BLOG", "name")?>
 <?php ob_start() ?>
 	<?php foreach ($posts as $post): ?>
 		<div class="row featurette">

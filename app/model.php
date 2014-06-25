@@ -4,7 +4,7 @@ require_once 'core/config.php';
 
 function mya_connection_db_open ()
 {
-	$config = mya_config::instance();
+	$config = Config::instance();
 
 	$host = $config->get("SQL", "host");
 	$user = $config->get("SQL", "username");

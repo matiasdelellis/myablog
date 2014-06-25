@@ -1,5 +1,4 @@
 <?php
-echo "Index: ".dirname(__FILE__);
 require_once '../model.php';
 require_once 'fileUtils.php';
 

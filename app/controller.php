@@ -14,13 +14,13 @@ class MyaController {
 
 	function compose_new_post ()
 	{
-		if (mya_auth::instance()->is_logged())
+		if (Auth::instance()->is_logged())
 			require 'app/views/composerView.php';
 	}
 
 	function login ()
 	{
-		if (!mya_auth::instance()->is_logged()) {
+		if (!Auth::instance()->is_logged()) {
 			require 'app/views/loginView.php';
 		}
 		else {
@@ -31,8 +31,8 @@ class MyaController {
 
 	function logout ()
 	{
-		if (mya_auth::instance()->is_logged()) {
-			mya_auth::instance()->logout ();
+		if (Auth::instance()->is_logged()) {
+			Auth::instance()->logout ();
 		}
 
 		$posts = mya_connection_get_posts ();
@@ -41,7 +41,7 @@ class MyaController {
 
 	function show_admin_page ()
 	{
-		if (mya_auth::instance()->is_logged()) {
+		if (Auth::instance()->is_logged()) {
 			$users = mya_connection_get_users ();
 			require 'app/views/adminView.php';
 		}
