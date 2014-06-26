@@ -1,9 +1,14 @@
 <?php
 session_start();
 class Auth {
-	private function __construct ()
+	public function login ($username)
 	{
-		$this->settings = parse_ini_string ($contents, TRUE);
+		$_SESSION['username'] = $username;
+	}
+
+	public function logged_user ()
+	{
+		return $_SESSION['username'];
 	}
 
 	public function is_logged ()

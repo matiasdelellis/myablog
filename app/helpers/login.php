@@ -1,11 +1,11 @@
 <?php
-session_start();
+require_once '../core/auth.php';
 require_once '../model.php';
 
 $username = $_POST['inputUsername'];
 $password = $_POST['inputPassword'];
 
-if (!isset($_SESSION['username'])) {
+if (!Auth::instance()->is_logged()) {
 	$db_link = mya_connection_db_open ();
 
 	$query = "SELECT id FROM users WHERE username = '$username' AND password = '$password'";
@@ -21,10 +21,10 @@ if (!isset($_SESSION['username'])) {
 		     "</script>";
 	}
 	else {
-		$_SESSION['username'] = $username;
+		Auth::instance()->login ($username);
 		header("location: /posts");
 	}
 }
 else {
-	echo "<h3>Alrady loged as " . $_SESSION['username'] . "</h3>";
+	echo "<h3>Alrady loged as " . Auth::instance()->user_logged . "</h3>";
 }
