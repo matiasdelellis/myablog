@@ -3,6 +3,8 @@ session_start();
 class Auth {
 	public function login ($username)
 	{
+		session_regenerate_id(true);
+
 		$_SESSION['username'] = $username;
 	}
 
@@ -18,7 +20,10 @@ class Auth {
 
 	public function logout ()
 	{
-		unset($_SESSION['username']);
+		session_unset();
+		session_destroy();
+		session_start();
+		session_regenerate_id(true);
 	}
 
 	public function button ()
