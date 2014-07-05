@@ -70,6 +70,7 @@
 		<!-- Bootstrap core JavaScript ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="app/templates/default/js/jquery.min.js"></script>
+		<script src="app/templates/default/js/jquery.form.min.js"></script>
 		<script src="app/templates/default/js/bootstrap.min.js"></script>
 		<script
 			<?php
