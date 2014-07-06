@@ -1,5 +1,5 @@
 <?php $title = 'Upload new post' ?>
-<?php $script = 'app/views/js/uploadImage.js' ?>
+<?php $script = 'app/view/js/uploadImage.js' ?>
 <?php ob_start() ?>
 <div class="row featurette">
 	<h1 class="featurette-heading">Upload a new post</h1>

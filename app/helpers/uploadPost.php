@@ -1,8 +1,11 @@
 <?php
-require_once '../model.php';
+set_include_path(get_include_path() . PATH_SEPARATOR . '/var/www/html/myablog');
+require_once 'app/model/post.php';
 
 $title = $_POST['inputTitle'];
 $text = $_POST['inputText'];
 $image = $_POST['inputImageUrl'];
 
-mya_connection_save_new_post ($title, $text, $image);
+$model = new Post;
+if ($model->save ($title, $text, $image))
+	header("location: /posts");

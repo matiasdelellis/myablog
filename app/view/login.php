@@ -1,5 +1,5 @@
 <?php $title = 'Login' ?>
-<?php $script = 'app/views/js/validateLogin.js' ?>
+<?php $script = 'app/view/js/validateLogin.js' ?>
 <?php ob_start() ?>
 <div class="row featurette">
 	<h1 class="featurette-heading">Login</h1>

@@ -1,6 +1,8 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . '/var/www/html/myablog');
+
+require_once 'app/core/config.php';
 require_once 'app/core/auth.php';
-require_once 'app/model.php';
 require_once 'app/controller.php';
 
 $uri = $_SERVER['REQUEST_URI'];

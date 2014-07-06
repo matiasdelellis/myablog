@@ -1,18 +1,19 @@
 <?php
-require_once '../core/auth.php';
-require_once '../model.php';
+set_include_path(get_include_path() . PATH_SEPARATOR . '/var/www/html/myablog');
+
+require_once 'app/core/auth.php';
+require_once 'app/core/database.php';
 
 $username = $_POST['Username'];
 $password = $_POST['Password'];
 
 if (!Auth::instance()->is_logged()) {
-	$db_link = mya_connection_db_open ();
+	$databse = new Database();
 
 	$query = "SELECT id FROM users WHERE username = '$username' AND password = '$password'";
-	$result = mysqli_query ($db_link, $query);
-	$row_result = mysqli_fetch_assoc ($result);
 
-	mya_connection_db_close ($db_link);
+	$result = $databse->query ($query);
+	$row_result = mysqli_fetch_assoc ($result);
 
 	if (!$row_result) {
 		echo "The username or password is incorrect";
