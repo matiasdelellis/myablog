@@ -1,15 +1,18 @@
 <?php
 require_once 'app/core/database.php';
+require_once 'vendor/erusev/parsedown/Parsedown.php';
 
 class Posts extends Database {
 	public function get ()
 	{
+		$Parsedown = new Parsedown();
 		$query = "SELECT * FROM posts ORDER BY id DESC";
 		$result = $this->query ($query);
 
 		$posts = array ();
 		while ($row_result = mysqli_fetch_assoc ($result))
 		{
+			$row_result['text'] = $Parsedown->text($row_result['text']);
 			$posts[] = $row_result;
 		}
 
