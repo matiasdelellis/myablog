@@ -1,5 +1,6 @@
 <?php $title = 'Upload new post' ?>
-<?php $script = 'app/view/js/uploadImage.js' ?>
+<?php $scripts[] = 'app/templates/default/js/jquery.form.min.js' ?>
+<?php $scripts[] = 'app/view/js/uploadImage.js' ?>
 <?php ob_start() ?>
 <div class="row featurette">
 	<h1 class="featurette-heading">Upload a new post</h1>

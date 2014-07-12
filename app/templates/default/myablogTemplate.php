@@ -18,6 +18,15 @@
 	    <![endif]-->
 		<!-- Custom styles for this template -->
 		<link href="/app/templates/default/css/myablog.css" rel="stylesheet">
+		<?php
+		if (isset($csss)) {
+			foreach ($csss as $css) {
+				echo "<link href='";
+				echo $css;
+				echo "' rel='stylesheet'>";
+			}
+		}
+		?>
 	</head>
 	<!-- NAVBAR================================================== -->
 	<body>
@@ -70,15 +79,15 @@
 		<!-- Bootstrap core JavaScript ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="app/templates/default/js/jquery.min.js"></script>
-		<script src="app/templates/default/js/jquery.form.min.js"></script>
 		<script src="app/templates/default/js/bootstrap.min.js"></script>
-		<script
-			<?php
-				if (isset($script)) {
-					echo " src=\"" . $script . "\"";
-				}
-			?>
-		></script>
+		<?php
+		if (isset($scripts)) {
+			foreach ($scripts as $script) {
+				echo "<script src='";
+				echo $script;
+				echo "'></script>";
+			}
+		}
+		?>
 	</body>
 </html>
-
