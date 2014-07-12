@@ -1,5 +1,6 @@
 <?php
-require_once 'app/core/database.php';
+$HOST_ROOT = $_SERVER["DOCUMENT_ROOT"];
+require_once ($HOST_ROOT.'/app/core/database.php');
 
 class Admin extends Database {
 	public function get_users ()

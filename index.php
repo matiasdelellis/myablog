@@ -1,5 +1,7 @@
 <?php
-set_include_path(get_include_path() . PATH_SEPARATOR . '/var/www/html/myablog');
+
+$HOST_ROOT = $_SERVER["DOCUMENT_ROOT"];
+set_include_path(get_include_path() . PATH_SEPARATOR . $HOST_ROOT);
 
 require_once 'app/core/config.php';
 require_once 'app/core/auth.php';

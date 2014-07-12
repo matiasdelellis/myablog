@@ -1,5 +1,6 @@
 <?php
-require_once 'config.php';
+$HOST_ROOT = $_SERVER["DOCUMENT_ROOT"];
+require_once ($HOST_ROOT.'/app/core/config.php');
 
 class Database {
 	private $db_link;

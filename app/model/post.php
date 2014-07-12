@@ -1,7 +1,9 @@
 <?php
-require_once 'app/core/database.php';
-require_once 'app/helpers/slug.php';
-require_once 'vendor/erusev/parsedown/Parsedown.php';
+$HOST_ROOT = $_SERVER["DOCUMENT_ROOT"];
+require_once ($HOST_ROOT.'/app/core/auth.php');
+require_once ($HOST_ROOT.'/app/core/database.php');
+require_once ($HOST_ROOT.'/app/helpers/slug.php');
+require_once ($HOST_ROOT.'/vendor/erusev/parsedown/Parsedown.php');
 
 class Post extends Database {
 	public function get ($slug)
