@@ -22,16 +22,30 @@ class MyaController {
 			require 'app/view/composer.php';
 	}
 
-	function login ()
+	function login ($action = "show")
 	{
-		if (!Auth::instance()->is_logged()) {
-			require 'app/view/login.php';
-		}
-		else {
-			require_once 'app/model/posts.php';
-			$model = new Posts;
-			$posts = $model->get ();
-			require 'app/view/posts.php';
+		switch ($action) {
+			case "show":
+				if (!Auth::instance()->is_logged()) {
+					require 'app/view/login.php';
+				}
+				else {
+					$this->show_posts ();
+				}
+				break;
+			case "login":
+				if (!Auth::instance()->is_logged()) {
+					require_once 'app/model/login.php';
+					$model = new Login;
+					$model->login ();
+				}
+				else {
+					$this->show_posts ();
+				}
+				break;
+			default:
+				$this->show_posts ();
+				break;
 		}
 	}
 
@@ -40,11 +54,7 @@ class MyaController {
 		if (Auth::instance()->is_logged()) {
 			Auth::instance()->logout ();
 		}
-
-		require_once 'app/model/posts.php';
-		$model = new Posts;
-		$posts = $model->get ();
-		require 'app/view/posts.php';
+		$this->show_posts ();
 	}
 
 	function show_admin_page ()
@@ -56,10 +66,7 @@ class MyaController {
 			require 'app/view/admin.php';
 		}
 		else {
-			require_once 'app/model/posts.php';
-			$model = new Posts;
-			$posts = $model->get ();
-			require 'app/view/posts.php';
+			$this->show_posts ();
 		}
 	}
 }

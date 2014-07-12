@@ -4,6 +4,11 @@ require_once ($HOST_ROOT.'/app/core/database.php');
 require_once ($HOST_ROOT.'/vendor/erusev/parsedown/Parsedown.php');
 
 class Posts extends Database {
+	public function __construct ()
+	{
+		parent::__construct();
+	}
+
 	public function get ()
 	{
 		$Parsedown = new Parsedown();

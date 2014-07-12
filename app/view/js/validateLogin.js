@@ -30,7 +30,7 @@ function validate_login_form ()
 		else if (window.ActiveXObject) {
 			xmlhttp = new ActiveXObject ("Microsoft.XMLHTTP");
 		}
-	 
+
 		if (xmlhttp) {
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4) {
@@ -44,7 +44,7 @@ function validate_login_form ()
 					}
 				}
 			};
-			xmlhttp.open ("POST", "app/helpers/login.php", true);
+			xmlhttp.open ("POST", "login/login", true);
 			xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xmlhttp.send (query);
 		}

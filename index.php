@@ -9,10 +9,12 @@ require_once 'app/controller.php';
 
 $uri = $_SERVER['REQUEST_URI'];
 $req_array = explode ('/', $uri);
-$request = $req_array[1];
 
-if ($request) {
-	switch ($request) {
+$controller = $req_array[1];
+$action = isset($req_array[2]) ? $req_array[2] : "show";
+
+if ($controller) {
+	switch ($controller) {
 		case "index.php":
 		case "posts":
 			$controller = new MyaController;
@@ -20,7 +22,7 @@ if ($request) {
 			break;
 		case "post":
 			$controller = new MyaController;
-			$controller->show_post_by_slug ($_GET['slug']);
+			$controller->show_post_by_slug ($action);
 			break;
 		case "composer":
 			$controller = new MyaController;
@@ -28,7 +30,7 @@ if ($request) {
 			break;
 		case "login":
 			$controller = new MyaController;
-			$controller->login ();
+			$controller->login ($action);
 			break;
 		case "logout":
 			$controller = new MyaController;

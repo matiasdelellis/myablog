@@ -6,6 +6,11 @@ require_once ($HOST_ROOT.'/app/helpers/slug.php');
 require_once ($HOST_ROOT.'/vendor/erusev/parsedown/Parsedown.php');
 
 class Post extends Database {
+	public function __construct ()
+	{
+		parent::__construct();
+	}
+
 	public function get ($slug)
 	{
 		$Parsedown = new Parsedown();

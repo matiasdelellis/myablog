@@ -3,6 +3,11 @@ $HOST_ROOT = $_SERVER["DOCUMENT_ROOT"];
 require_once ($HOST_ROOT.'/app/core/database.php');
 
 class Admin extends Database {
+	public function __construct ()
+	{
+		parent::__construct();
+	}
+
 	public function get_users ()
 	{
 		$query = "SELECT * FROM users";
