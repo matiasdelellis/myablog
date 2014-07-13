@@ -5,7 +5,7 @@ function afterSuccess ()
 	var hostname = 'http://' + window.location.hostname;
 	imageurl = imageurl.replace(hostname, '');
 
-	$('#ImageUrl')[0].value = imageurl;
+	$('#ImageUrl')[0].value = '{"SourceType":"Image", "Source":"' + imageurl + '"}';
 }
 
 $(document).ready(function() {
